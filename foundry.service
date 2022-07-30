@@ -1,0 +1,14 @@
+[Unit]
+Description=FoundryVTT Service
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/foundryvtt/foundryvtt.pid
+User=root
+ExecStart=/home/ubuntu/start.sh start
+ExecStop=/home/ubuntu/start.sh stop
+ExecReload=/home/ubuntu/start.sh restart
+
+[Install]
+WantedBy=multi-user.target
